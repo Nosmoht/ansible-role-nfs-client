@@ -1,0 +1,6 @@
+---
+nfs_client_client_service_names:
+- rpcbind
+- rpcidmapd
+- nfslock
+- netfs

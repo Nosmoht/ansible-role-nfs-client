@@ -1,0 +1,6 @@
+---
+nfs_client_package_name: nfs-utils
+nfs_client_package_state: present
+nfs_client_service_state: running
+nfs_client_service_enabled: true
+nfs_client_mounts: []
