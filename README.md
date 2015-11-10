@@ -4,11 +4,14 @@ nfs-client
 - [Requirements](#requirements)
 - [Variables](#variables)
 - [Usage](#usage)
+- [Author](#author)
 
 # Introduction
+
 Ansible role to install and configure NFS client.
 
 # Requirements
+
 Ansible
 
 # Variables
@@ -34,3 +37,7 @@ Ansible
   roles:
   - role: nfs-client
 ```
+
+# Author
+
+[Thomas Krahn](mailto:ntbc@gmx.net)
