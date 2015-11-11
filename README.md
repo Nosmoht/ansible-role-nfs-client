@@ -33,7 +33,10 @@ Ansible
     nfs_client_mounts:
     - src: nfs-server.example.com
       name: /mnt/nfs
-      opts: rw,rsize=32768,wsize=32786      
+      opts: rw,rsize=32768,wsize=32786
+  become: true
+  become_method: sudo
+  become_user: root
   roles:
   - role: nfs-client
 ```
