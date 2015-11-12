@@ -26,17 +26,20 @@ Ansible
 | nfs_client_mounts | List of dictionaries describing NFS mount points | [] |
 
 # Usage
+Some tasks of the role require root privileges. Therefore become must be used
+with either sudo or su.
+
 ```yaml
 ---
 - hosts: server
+  become: true
+  become_method: sudo
+  become_user: root
   vars:
     nfs_client_mounts:
     - src: nfs-server.example.com
       name: /mnt/nfs
       opts: rw,rsize=32768,wsize=32786
-  become: true
-  become_method: sudo
-  become_user: root
   roles:
   - role: nfs-client
 ```
