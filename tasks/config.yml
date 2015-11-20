@@ -1,5 +1,12 @@
 ---
-# dump as passno provided as strings due to: https://github.com/ansible/ansible-modules-core/issues/1868
+- name: Ensure Kernel parameters
+  sysctl:
+    name: '{{ item.name }}'
+    value: '{{ item.value }}'
+    state: '{{ item.state | default("present") }}'
+  with_items: nfs_client_kernel_parameters
+
+# dump and passno provided as strings due to: https://github.com/ansible/ansible-modules-core/issues/1868
 - name: Ensure mounts
   mount:
     dump: '{{ item.dump | default(0) | string }}'
